@@ -167,7 +167,7 @@ static void *resolve_memmem(const void *haystack, size_t haystack_len, const voi
     return current_memmem_impl(haystack, haystack_len, needle, needle_len);
 }
 
-void *aob_memmem(const void* haystack, size_t haystack_len, const void* needle, size_t needle_len)
+EXPORT void *aob_memmem(const void* haystack, size_t haystack_len, const void* needle, size_t needle_len)
 {
     return current_memmem_impl(haystack, haystack_len, needle, needle_len);
 }
