@@ -180,7 +180,7 @@ EXPORT ptrdiff_t nativec_scan_solid(
  *
  * @return Указатель на первое совпадение в памяти или NULL, если ничего не найдено.
 */
-void *aob_memmem(const void* haystack, size_t haystack_len, const void* needle, size_t needle_len);
+EXPORT void *aob_memmem(const void* haystack, size_t haystack_len, const void* needle, size_t needle_len);
 
 /**
  * @brief Выполняет быстрый поиск сплошных сигнатур (без маски), но принимает структуру AobRegionTask.
