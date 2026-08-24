@@ -184,7 +184,7 @@ def main():
 
         if args.build or args.test:
             print("\x1b[32mInfo\x1b[0m: Building project binaries...")
-            build_cmd = ["cmake", "--build", build_dir]
+            build_cmd = ["cmake", "--build", build_dir, "--config", build_type]
             if args.multithreaded:
                 build_cmd.append("--parallel")
             subprocess.run(build_cmd, check=True)
