@@ -58,4 +58,5 @@ target_link_libraries(AobNativeTestsCpp PRIVATE
 )
 
 include(GoogleTest)
-gtest_discover_tests(AobNativeTestsCpp)
+add_test(NAME AobNativeTests COMMAND AobNativeTestsCpp)
+set_target_properties(AobscanFastNativeC PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
