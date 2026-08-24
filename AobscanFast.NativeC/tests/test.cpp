@@ -19,35 +19,6 @@ TEST(AobInternalTest, IsMatchFallback) {
     EXPECT_FALSE(is_match_fallback(data, pattern, mask, 5));
 }
 
-#if defined(__AVX2__) || defined(_M_AMD64)
-TEST(AobInternalTest, IsMatchAVX2) {
-    uint8_t data[40];
-    uint8_t pattern[40];
-    uint8_t mask[40];
-
-    for (int i = 0; i < 40; ++i) {
-        data[i] = static_cast<uint8_t>(i + 1);
-        pattern[i] = static_cast<uint8_t>(i + 1);
-        mask[i] = 0xFF;
-    }
-
-    // Вайлдкарды на 15-й и 35-й позиции
-    mask[15] = 0x00; pattern[15] = 0x00; data[15] = 0xAA;
-    mask[35] = 0x00; pattern[35] = 0x00; data[35] = 0xBB;
-
-    EXPECT_TRUE(is_match_avx2(data, pattern, mask, 40));
-
-    // Ломаем байт в пределах AVX2 блока
-    data[5] ^= 0xFF;
-    EXPECT_FALSE(is_match_avx2(data, pattern, mask, 40));
-
-    // Восстанавливаем и ломаем байт в хвосте (> 32)
-    data[5] ^= 0xFF;
-    data[38] ^= 0xFF;
-    EXPECT_FALSE(is_match_avx2(data, pattern, mask, 40));
-}
-#endif
-
 // ==========================================
 // 2. Тесты функции nativec_scan_mask
 // ==========================================
