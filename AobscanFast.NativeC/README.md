@@ -2,7 +2,7 @@
 A AobscanFast module to improve performance. Written in C.
 
 ## Compiling type
-Shared library, compiles into AobscanFast.NativeC/runtimes/win-x64/native/.dll
+Shared library, compiles into AobscanFast.NativeC/runtimes/win-x64/native/Release/AobscanNativeC.dll
 
 ## Features
 - Fast.
