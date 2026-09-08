@@ -26,5 +26,5 @@ jobs:
         run: cd AobscanFast.NativeC && ./configure.py -build -multithreaded
 
       - name: Run Benchmark
-        run: dotnet run -c Release --project AobscanFast.Benchmarks -- -f "*" -j ShortRun
+        run: dotnet run -c Release --project AobscanFast.Benchmarks
   
