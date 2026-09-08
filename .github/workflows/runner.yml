@@ -3,8 +3,8 @@ name: Run AobscanFast Benchmark
 on:
   push: 
     branches: [ "NativeC" ]
-  tags:
-    - 'run_bench*'
+    tags:
+        - 'run_bench*'
 
 jobs:
   benchmark:
